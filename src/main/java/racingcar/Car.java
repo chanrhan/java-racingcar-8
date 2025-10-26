@@ -19,6 +19,6 @@ public class Car {
     }
 
     public void printCurrentPosition(){
-
+        System.out.printf("%s : %s\n", name, "-".repeat(pos));
     }
 }

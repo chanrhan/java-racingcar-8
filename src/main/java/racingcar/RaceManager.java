@@ -1,5 +1,7 @@
 package racingcar;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RaceManager {
@@ -12,7 +14,9 @@ public class RaceManager {
     }
 
     private List<Car> parseStringToCars(String str){
-        return null;
+        return Arrays.stream(str.split(str, ','))
+                .map(Car::new)
+                .toList();
     }
 
     public void start(){
@@ -23,8 +27,19 @@ public class RaceManager {
 
     }
 
-    public void printWinners(){
+    private void printCurrentRaceStatus(){
+        for(Car car:cars){
+            car.printCurrentPosition();
+        }
+    }
 
+    private String[] getWinners(){
+        return null;
+    }
+
+    public void printWinners(){
+        String winners = String.join(",", getWinners());
+        System.out.printf("최종 우승자 : %s", winners);
     }
 
 
