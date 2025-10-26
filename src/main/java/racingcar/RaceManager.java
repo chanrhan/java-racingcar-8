@@ -45,7 +45,21 @@ public class RaceManager {
     }
 
     private List<String> getWinners(){
-        return null;
+        List<String> winners = new ArrayList<>();
+        List<Car> sortedList = cars.stream().sorted((car1,car2)->car2.pos-car1.pos).toList();
+        Car top = sortedList.get(0);
+        winners.add(top.name);
+
+        Car car;
+        for (int i=1;i<sortedList.size();++i){
+            car = sortedList.get(i);
+            if(car.pos != top.pos){
+                break;
+            }
+            winners.add(car.name);
+        }
+
+        return winners;
     }
 
     public void printWinners(){
