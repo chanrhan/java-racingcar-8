@@ -1,6 +1,8 @@
 package racingcar;
 
-public class Car {
+import java.util.Random;
+
+public class Car  {
     public String name;
     public int pos=0;
 
@@ -9,7 +11,8 @@ public class Car {
     }
 
     private boolean canMove(){
-        return false;
+        Random random = new Random();
+        return random.nextInt(0, 10) >= 4;
     }
 
     public void tryMove(){
