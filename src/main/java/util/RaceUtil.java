@@ -18,8 +18,9 @@ public class RaceUtil {
 
     public static List<Car> getWinners(List<Car> cars) {
         int maxPosition = cars.stream()
-                .max((car1,car2)-> car2.position - car1.position)
-                .hashCode();
+                        .mapToInt(car->car.position)
+                        .max()
+                        .orElseThrow();
 
         return cars.stream()
                 .filter(car->car.position == maxPosition)
