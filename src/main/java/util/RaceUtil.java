@@ -18,12 +18,12 @@ public class RaceUtil {
 
     public static List<Car> getWinners(List<Car> cars) {
         int maxPosition = cars.stream()
-                        .mapToInt(car->car.position)
-                        .max()
-                        .orElseThrow();
+                .mapToInt(car -> car.position)
+                .max()
+                .orElseThrow();
 
         return cars.stream()
-                .filter(car->car.position == maxPosition)
+                .filter(car -> car.position == maxPosition)
                 .toList();
     }
 }
