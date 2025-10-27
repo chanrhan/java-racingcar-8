@@ -27,4 +27,18 @@
 
 ### fix: 랜덤 정수를 생성하는 라이브러리 교체
 
-- 기본 `java.utils.Random` 라이브러리 대신, 제공된 라이브러리인 `camp.nextstep.edu.missionutils.Randoms` 사용 
+- 기본 `java.util.Random` 라이브러리 대신, 제공된 라이브러리인 `camp.nextstep.edu.missionutils.Randoms` 사용 
+
+### refactor: 패키지 재설계 및 단일 책임 분리 적용
+
+- `RaceService` 
+  - 클래스명 변경 
+    - 기존 : `RaceManager`
+    - 변경 : `RaceService`
+  - Race 를 실행하는 역할만 담당하도록 코드 분리
+    - 문자열을 파싱하거나, 우승자를 결정하는 코드를 분리 
+- `RaceUtil`
+  - Race 에 관련된 여러 유틸 함수들을 모아놓은 클래스
+  - 문자열을 파싱하거나, 우승자를 결정하는 함수 등, Race 를 진행하는 데에는 직접적인 관련은 없지만 간접적으로 관련이 있는 함수들을 분리 
+- `ConsoleWriter`
+  - Console 에 결과를 출력하는 클래스

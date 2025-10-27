@@ -1,6 +1,8 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Console;
+import service.ConsoleWriter;
+import service.RaceService;
 
 public class Application {
     public static void main(String[] args) {
@@ -12,11 +14,8 @@ public class Application {
 
         System.out.println("\n실행 결과:");
 
-        RaceManager raceManager = new RaceManager(carNames, maxMoveCount);
-
-        raceManager.start();
-
-        raceManager.printWinners();
+        RaceService raceService = new RaceService(carNames, maxMoveCount);
+        raceService.start();
 
         Console.close();
     }
