@@ -18,12 +18,10 @@ public class ConsoleWriter {
 
     // 우승자 목록을 터미널에 출력하는 함수
     public static void printWinners(List<Car> cars) {
-        List<String> carNames = cars.stream()
+        String carNames = cars.stream()
                 .map(car -> car.name)
-                .collect(Collectors.toList());
-
-        String resultString = String.join(",", carNames);
-
-        System.out.printf("최종 우승자 : %s", resultString);
+                .collect(Collectors.joining());
+        
+        System.out.printf("최종 우승자 : %s", carNames);
     }
 }
