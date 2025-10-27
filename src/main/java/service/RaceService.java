@@ -5,6 +5,7 @@ import util.RaceUtil;
 
 import java.util.List;
 
+// Race 를 실행하는 클래스
 public class RaceService {
     private final List<Car> cars;
     private final int maxMoveCount;

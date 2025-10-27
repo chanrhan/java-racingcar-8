@@ -2,6 +2,7 @@ package domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+// 자동차 클래스
 public class Car {
     public String name;
     public int position = 0;

@@ -5,6 +5,7 @@ import domain.Car;
 import java.util.Arrays;
 import java.util.List;
 
+// Race 관련 유틸 함수들을 모아놓은 클래스
 public class RaceUtil {
     public static List<Car> parseStringToCars(String str) {
         try {
